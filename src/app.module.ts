@@ -13,7 +13,8 @@ import { CommentsModule } from './comments/comments.module';
   imports: [
     GraphQLModule.forRoot({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql')
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      playground: true,
     }),
     UsersModule,
     PostsModule,
