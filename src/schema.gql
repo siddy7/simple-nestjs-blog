@@ -1,0 +1,93 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: Int!
+  name: String!
+  username: String!
+  email: String!
+  address_street: String!
+  address_suite: String!
+  address_city: String!
+  address_zipcode: String!
+  address_geo_lat: String!
+  address_geo_lng: String!
+  phone: String!
+  website: String!
+  company_name: String!
+  company_catchPhrase: String!
+  company_bs: String!
+}
+
+type Comment {
+  postId: Int!
+  id: Int!
+  name: String!
+  email: String!
+  body: String!
+}
+
+type Post {
+  id: Int!
+  title: String!
+  body: String!
+  comments: [Comment!]!
+  user: PostUser!
+}
+
+type PostUser {
+  name: String!
+  username: String!
+  email: String!
+}
+
+type Query {
+  getUsers: [User!]!
+  getUser(id: Int!): User!
+  getPosts: [Post!]!
+  getPost(id: Int!): Post!
+  getComments: [Comment!]!
+  getComment(id: Int!): Comment!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+}
+
+input CreateUserInput {
+  name: String!
+  username: String!
+  email: String!
+  address_street: String!
+  address_suite: String!
+  address_city: String!
+  address_zipcode: String!
+  address_geo_lat: String!
+  address_geo_lng: String!
+  phone: String!
+  website: String!
+  company_name: String!
+  company_catchPhrase: String!
+  company_bs: String!
+}
+
+input UpdateUserInput {
+  name: String
+  username: String
+  email: String
+  address_street: String
+  address_suite: String
+  address_city: String
+  address_zipcode: String
+  address_geo_lat: String
+  address_geo_lng: String
+  phone: String
+  website: String
+  company_name: String
+  company_catchPhrase: String
+  company_bs: String
+  id: Float!
+}
