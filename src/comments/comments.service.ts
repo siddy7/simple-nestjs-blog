@@ -17,8 +17,8 @@ export class CommentsService {
   }
 
   findOne(id: number): Promise<Comment> {
-    return lastValueFrom(this.httpService.get("https://jsonplaceholder.typicode.com/comments").pipe(
-      map(response => response.data.find(comment => comment.id === id))
+    return lastValueFrom(this.httpService.get("https://jsonplaceholder.typicode.com/comments/" + id).pipe(
+      map(response => response.data)
     ));
   }
 

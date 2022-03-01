@@ -18,8 +18,8 @@ export class PostsService {
   }
 
   findOne(id: number): Promise<Post> {
-    return lastValueFrom(this.httpService.get("https://jsonplaceholder.typicode.com/posts").pipe(
-      map(response => response.data.find(post => post.id === id))
+    return lastValueFrom(this.httpService.get("https://jsonplaceholder.typicode.com/posts/" + id).pipe(
+      map(response => response.data)
     ));
   }
 
